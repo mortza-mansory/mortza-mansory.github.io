@@ -1,0 +1,215 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+}
+
+.card-3d {
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: rotateX(8deg) rotateY(8deg) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.auto-spin {
+  animation: subtle-spin 25s linear infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes subtle-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.spotlight-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    transition: background 0.1s ease-out;
+}
+
+/* --- ANIMATION RAILS --- */
+.tech-rail, .gallery-rail {
+  display: flex;
+  white-space: nowrap;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.tech-rail:hover, .gallery-rail:hover {
+  animation-play-state: paused;
+}
+
+.fa .tech-rail, .fa .gallery-rail {
+  animation-name: slideReverse;
+}
+
+.tech-rail {
+  animation-name: slide;
+  animation-duration: 30s;
+}
+
+/* NEW/MODIFIED: Gallery animation rail */
+.gallery-rail {
+  padding: 1rem;
+  gap: 1.5rem; /* Replaces space-x-6 */
+  animation-name: slide;
+  animation-duration: 90s; /* Slower speed for larger items */
+}
+
+@keyframes slide {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slideReverse {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0%); }
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.smoke-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+.smoke-element {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    animation-name: animate-smoke;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.dark .smoke-element {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+.smoke-1 { top: 10%; left: -10%; animation-duration: 25s; }
+.smoke-2 { top: 40%; left: 30%; animation-duration: 35s; animation-delay: -10s; }
+.smoke-3 { bottom: -5%; right: -5%; animation-duration: 30s; animation-delay: -20s; }
+@keyframes animate-smoke {
+  0%, 100% { transform: translateX(-25%) scale(1); opacity: 0.05; }
+  50% { transform: translateX(25%) scale(1.2); opacity: 0.15; }
+}
+
+/* Image Fade Animation in Cards */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    cursor: pointer;
+}
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.image-container img.active {
+    opacity: 1;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.modal-backdrop.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+.modal-backdrop.visible .modal-content {
+    transform: scale(1);
+}
+.modal-content img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 0.5rem;
+}
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+.modal-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-prev {
+    left: 10px;
+}
+.modal-next {
+    right: 10px;
+}
