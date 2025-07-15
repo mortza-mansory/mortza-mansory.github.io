@@ -23,7 +23,7 @@ const translations = {
     blockchain: "Blockchain & Smart Contracts",
     blockchainDesc: "Solidity (ERC20, ERC721/1155, ERC4626, ERC4907), Web3.js, Ethers.js, Truffle, Web3Dart, WalletConnect",
     securityDevops: "Security & DevOps",
-    securityDevopsDesc: "OpenZeppelin Anti-Attack Patterns, Linux, Server Deployment",
+    securityDevopsDesc: "ModSecurity WAF configuration for Nginx( Dynamic Moudle), Linux, Server and web server Deployment",
     projects: "Projects",
     escrow: "Smart Escrow Contract",
     escrowDesc: "A secure Ethereum-based escrow smart contract for safe crypto deals with dynamic fee control and time-locks",
