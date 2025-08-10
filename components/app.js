@@ -17,13 +17,13 @@ const translations = {
     themeToggle: () => isDark.val ? "Light Theme ☀️" : "Dark Theme 🌙",
     spotlightToggle: () => isSpotlightOn.val ? "Disable Spotlight ✨" : "Enable Spotlight ✨",
     clientDev: "Client Development",
-    clientDesc: "Flutter/Dart (BLoC, GetX, MVVM, MVC), C++ (Lingui, OpenCV)",
+    clientDesc: "Flutter/Dart (BLoC, GetX, MVVM, MVC)",
     backend: "Backend",
-    backendDesc: "FastAPI (Python), Node.js + Express, RESTful API, SQL, Postegrell",
+    backendDesc: "FastAPI (Python),RESTful API, SQL, Postegrell",
     blockchain: "Blockchain & Smart Contracts",
     blockchainDesc: "Solidity (ERC20, ERC721/1155, ERC4626, ERC4907), Web3.js, Ethers.js, Truffle, Web3Dart, WalletConnect",
     securityDevops: "Security & DevOps",
-    securityDevopsDesc: "ModSecurity WAF configuration for Nginx( Dynamic Moudle),CRS Owsap, Linux, Server and web server Deployment",
+    securityDevopsDesc: "ModSecurity WAF configuration,CRS(Core Rule Set), Linux and web server Deployment",
     projects: "Projects",
     escrow: "Smart Escrow Contract",
     escrowDesc: "A secure Ethereum-based escrow smart contract for safe crypto deals with dynamic fee control and time-locks",
@@ -68,13 +68,13 @@ const translations = {
     themeToggle: () => isDark.val ? "تم روشن ☀️" : "تم تاریک 🌙",
     spotlightToggle: () => isSpotlightOn.val ? "غیرفعال کردن نورپردازی ✨" : "فعال کردن نورپردازی ✨",
     clientDev: "توسعه کلاینت",
-    clientDesc: "Flutter/Dart (BLoC, GetX, MVVM, MVC)، C++ (Lingui, OpenCV)",
+    clientDesc: "Flutter/Dart (BLoC, GetX, MVVM, MVC)",
     backend: "بک‌اند",
-    backendDesc: "FastAPI (Python)، Node.js + Express، RESTful API، SQL، MongoDB",
+    backendDesc: "FastAPI (Python)، RESTful API، SQL، MongoDB",
     blockchain: "بلاکچین و قراردادهای هوشمند",
     blockchainDesc: "Solidity (ERC20, ERC721/1155, ERC4626, ERC4907)، Web3.js، Ethers.js، Truffle، Web3Dart، WalletConnect",
     securityDevops: "امنیت و DevOps",
-    securityDevopsDesc: "کانفینگ کردن nginx, ModSecurity,CRS Owsap، Linux، استقرار سرور",
+    securityDevopsDesc: "کانفینگ کردن nginx, ModSecurity,CRS( Core Rule Set)",
     projects: "پروژه‌ها",
     escrow: "قرارداد هوشمند اسکرو",
     escrowDesc: "یک قرارداد هوشمند مبتنی بر اتریوم برای معاملات امن با کنترل کارمزد پویا و قفل زمانی",
@@ -309,3 +309,4 @@ const App = () => div(
 
 // Add the entire app to the body of the document
 van.add(document.body, App());
+
