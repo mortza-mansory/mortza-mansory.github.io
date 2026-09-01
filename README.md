@@ -1,2 +1,2 @@
-# My painting with VanJs;
+# My painting with Swiper;
 Still like scatchs...
